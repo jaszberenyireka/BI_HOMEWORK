@@ -53,7 +53,7 @@ def etl_process_titles():
     titles_df['total_cast'] = titles_df['total_cast'].astype(int)
 
     # Adatok betöltése a 'titles' táblába
-    engine = create_engine('postgresql+psycopg2://postgres:Bb20230906r@localhost:5432/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:@localhost:5432/postgres')
 
     titles_df.to_sql('titles', con=engine, if_exists='append', index=False)
     
