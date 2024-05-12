@@ -34,7 +34,7 @@ def etl_process_directors():
     directors_df.drop(columns=['role'], inplace=True)
 
     # Adatok betöltése a 'directors' táblába
-    engine = create_engine('postgresql+psycopg2://postgres:Bb20230906r@localhost:5432/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:@localhost:5432/postgres')
     
     directors_df.to_sql('directors', con=engine, if_exists='append', index=False)
     
