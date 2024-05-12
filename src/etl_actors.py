@@ -34,7 +34,7 @@ def etl_process_actors():
     actors_df.drop(columns=['role'], inplace=True)
 
     # Adatok betöltése az 'actors' táblába
-    engine = create_engine('postgresql+psycopg2://postgres:Bb20230906r@localhost:5432/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:@localhost:5432/postgres')
     
     actors_df.to_sql('actors', con=engine, if_exists='append', index=False)
     
